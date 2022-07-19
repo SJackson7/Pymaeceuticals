@@ -18,7 +18,7 @@ I broke down the data into the following tasks:
 * Calculating correlation and regression.
 * Final analysis.
 
-Below are the folling actions that I took for each task.
+Below are the following actions that I took for each task.
 
 ### Preparing the Data
 * Run the provided package dependency and data imports, and then merge the mouse_metadata and study_results DataFrames into a single DataFrame.
@@ -40,8 +40,8 @@ Below are the folling actions that I took for each task.
 
 ### Calculating Quartiles, Find Outliers, and Create a Box Plot
 * Calculate the final tumor volume of each mouse across four of the most promising treatment regimens: Capomulin, Ramicane, Infubinol, and Ceftamin. Then, calculate the quartiles and IQR, and determine if there are any potential outliers across all four treatment regimens. Use the following substeps:
-* Create a grouped DataFrame that shows the last (greatest) time point for each mouse. Merge this grouped DataFrame with the original cleaned DataFrame.
-* Create a list that holds the treatment names as well as a second, empty list to hold the tumor volume data.
+  * Create a grouped DataFrame that shows the last (greatest) time point for each mouse. Merge this grouped DataFrame with the original cleaned DataFrame.
+  * Create a list that holds the treatment names as well as a second, empty list to hold the tumor volume data.
 * Loop through each drug in the treatment list, locating the rows in the merged DataFrame that correspond to each treatment. Append the resulting final tumor volumes for each drug to the empty list.
 * Determine outliers by using the upper and lower bounds, and then print the results.
 * Using Matplotlib, generate a box plot of the final tumor volume for all four treatment regimens. Highlight any potential outliers in the plot by changing their color and style.
@@ -52,3 +52,11 @@ Below are the folling actions that I took for each task.
 ### Calculating Correlation and Regression
 * Calculate the correlation coefficient and linear regression model between mouse weight and average tumor volume for the Capomulin treatment.
 * Plot the linear regression model on top of the previous scatter plot.
+
+### Final Analysis
+As it appears in the script.
+
+* The effectiveness of Capomulin is comparable to Ramicane with slightly better results. Capomulin is far more effective than Infubinol and Ceftamin in reducing tumor size. Additionally, Capomulin and Ramicane were the most consistent treatments as they had the lowest standard errors.
+* Granted, there is a strong, positive correlation between mouse weight and average tumor size with a correlation value of 0.8419 but it is not enough to determine if drug regimen success is factored by weight.
+* The gender of mice tested was near equal, with about 49% female to 51% male. Based on this, there is no gender bias; however, further study is needed to verify survival rates and drug treatment results by gender to determine if there is an unknown factor.
+* There was at least one lucky mouse taking Infubinol where it had a tumor volume reduction well below the statistical lower bound for the drug. This should not be taken under consideration to retest the drug though.
